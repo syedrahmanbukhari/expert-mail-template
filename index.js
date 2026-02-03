@@ -4,8 +4,8 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Static files (images) ko serve karne ke liye
-app.use(express.static(path.join(__dirname)));
+// Static files (images) ko serve karne ke liye - public folder se
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // "/" route par root ki html file serve
 app.get("/", (req, res) => {
